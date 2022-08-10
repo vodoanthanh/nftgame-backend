@@ -1,0 +1,25 @@
+{
+  "apps": [
+    {
+      "name": "backend:application",
+      "script": "dist/server.js",
+      "instances": 1,
+      "watch": false,
+      "exec_mode": "cluster"
+    },
+    {
+      "name": "backend:consumer:blockchain",
+      "script": "dist/handlers/consumers/blockchain.consumer.js",
+      "instances": 1,
+      "watch": false,
+      "exec_mode": "cluster"
+    },
+    {
+      "name": "backend:cronjob:processEvents",
+      "script": "dist/handlers/cronjobs/processEvents.cronjob.js",
+      "instances": 1,
+      "watch": false,
+      "exec_mode": "cluster"
+    }
+  ]
+}
